@@ -4,7 +4,7 @@ This HTML page contains functionality to assist pentesters in escaping restricte
 ![](https://github.com/PN-Tester/KioskBreakout/blob/main/Breakout.PNG)
 
 # Rational 
-There are several websites that offer similar functionality such as the classic ikatz breakout tool and phrack.me kiosk evasion tool. While these are excellent resources, sometimes you will not be able to perform arbitrary navigation to third-party sites from your kiosk target. In situations where internet access is restricted or severely filtered, it may be necessary for testers to have a self-contained, offline version of these tools with similar functionality. This kiosk breakout assisstant fills that requirement.
+There are several websites that offer similar functionality such as the classic [ikatz breakout tool](https://www.ikat.kronicd.net/Windows/) and [phrack.me kiosk evasion tool](https://www.phrack.me/tools/2022/11/02/Kiosk-Breakout.html). While these are excellent resources, sometimes you will not be able to perform arbitrary navigation to third-party sites from your kiosk target. In situations where **internet access is restricted** or severely filtered, it may be necessary for testers to have a self-contained, offline version of these tools with similar functionality. This kiosk breakout assisstant fills that requirement. I have combined the protocol handlers from both of these tools, and included _some_ of the functionality from ikatz. In an effort to keep the html file as small and portable as possible, many features have been omitted or shortened.
 
 # Usage
 Simply load this html file in the kiosk browser somehow, and you can begin attempting to breakout using the functionality built-in to the page. There are currently 5 main sections.
