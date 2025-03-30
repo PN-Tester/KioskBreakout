@@ -1,6 +1,8 @@
 # KioskBreakout
 This HTML page contains functionality to assist pentesters in escaping restricted browser environments and access the underlying windows OS. The page is entirely self-contained and includes no external dependencies making it suitable for usage against targets with limited or no outbound internet access.
 
+![](https://github.com/PN-Tester/KioskBreakout/blob/main/Breakout.PNG)
+
 # Rational 
 There are several websites that offer similar functionality such as the classic ikatz breakout tool and phrack.me kiosk evasion tool. While these are excellent resources, sometimes you will not be able to perform arbitrary navigation to third-party sites from your kiosk target. In situations where internet access is restricted or severely filtered, it may be necessary for testers to have a self-contained, offline version of these tools with similar functionality. This kiosk breakout assisstant fills that requirement.
 
