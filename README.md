@@ -13,4 +13,4 @@ Simply load this html file in the kiosk browser somehow, and you can begin attem
 5 - Protocol Handlers : This is a huge list of protocol handler links that may trigger an explorer dialogue or otherwise launch another application that presents breakout possibilities.
 
 # Protip
-If you are wondering how to get this page into your target environment, consider data-uri's! Encoding the entire page a data:text/html uri is an effective way to circumvent data infiltration countermeasures. If you do not have access to the clipboard, no worries. I have another project called SloppyCopy which can get this file into a restricted environment in less than 3 minutes.
+If you are wondering how to get this page into your target environment, consider using a data-uri! Encoding the entire page a data:text/html uri is an effective way to circumvent data infiltration countermeasures. If you do not have access to the clipboard, no worries. I have another project called SloppyCopy which can get this file into a restricted environment in less than 3 minutes.
