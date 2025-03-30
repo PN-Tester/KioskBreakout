@@ -17,3 +17,6 @@ Simply load this html file in the kiosk browser somehow, and you can begin attem
 
 # Protip
 If you are wondering how to get this page into your target environment, consider using a data-uri! Encoding the entire page a data:text/html uri is an effective way to circumvent data infiltration countermeasures. If you do not have access to the clipboard, no worries. I have another project called [sloppyCopy](https://github.com/PN-Tester/sloppyCopy) which can get this file into a restricted environment in less than 3 minutes via keyboard simulation. Simply point SloppyCopy at KioskBreakout.html with the ```--citrix``` and ```--uri``` flags, click the URL bar in your restricted browser, wait for the simulation to complete.
+
+# Demo usage with sloppyCopy
+![](https://github.com/PN-Tester/KioskBreakout/blob/main/breakout%20demo.gif)
