@@ -11,7 +11,7 @@ Simply load this html file in the kiosk browser somehow, and you can begin attem
 2. **ActiveX Console** : Lets you run arbitrary os level commands from the page. This will not work in modern browsers, but is useful if you can somehow get the page to load in IE. 
 3. **Common Dialogues** : A few common web features that may let you open an explorer context even when keyboard shortcuts are disabled (upload file, save as, print, etc.).
 4. **Chromium Settings** : These are pseudo-protocol urls that open various settings in chromium-based browsers (Edge, Chrome, Opera, Brave, etc.). Browser security forces us to copy paste these into the URL bar.
-5. **Protocol Handlers** : This is a huge list of protocol handler links that may trigger an explorer dialogue or otherwise launch another application that presents breakout possibilities.
+5. **Protocol Handlers** : This is a list of 437 protocol handler links that may trigger an explorer dialogue or otherwise launch another application that presents breakout possibilities.
 
 # Protip
 If you are wondering how to get this page into your target environment, consider using a data-uri! Encoding the entire page a data:text/html uri is an effective way to circumvent data infiltration countermeasures. If you do not have access to the clipboard, no worries. I have another project called [sloppyCopy](https://github.com/PN-Tester/sloppyCopy) which can get this file into a restricted environment in less than 3 minutes via keyboard simulation. Simply point SloppyCopy at KioskBreakout.html with the ```--citrix``` and ```--uri``` flags, click the URL bar in your restricted browser, wait for the simulation to complete.
